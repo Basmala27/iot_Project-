@@ -1,0 +1,5 @@
+gmqtt
+aiocoap
+PyYAML
+cryptography
+pyopenssl

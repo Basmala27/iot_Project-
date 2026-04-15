@@ -1,0 +1,9 @@
+num_floors: 6
+rooms_per_floor: 20
+tick_interval: 5
+fault_rate:
+  drift: 0.1
+  frozen: 0.05
+  drop: 0.02
+mqtt_broker: "localhost"
+mqtt_port: 1883

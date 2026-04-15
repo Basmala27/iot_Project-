@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<hivemq xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="../config.xsd"
+        xsi:schemaLocation="http://www.hivemq.com/schemas/hivemq-config.xsd">
+
+    <!-- Listeners Configuration -->
+    <listeners>
+        <tcp-listener>
+            <port>1883</port>
+            <bind-address>0.0.0.0</bind-address>
+        </tcp-listener>
+        
+        <tls-listener>
+            <port>8883</port>
+            <bind-address>0.0.0.0</bind-address>
+            <tls>
+                <keystore-path>/opt/hivemq/config/tls/hivemq.jks</keystore-path>
+                <keystore-password>changeit</keystore-password>
+                <private-key-password>changeit</private-key-password>
+                <client-authentication-mode>NONE</client-authentication-mode>
+            </tls>
+        </tls-listener>
+        
+        <websocket-listener>
+            <port>1884</port>
+            <bind-address>0.0.0.0</bind-address>
+            <path>/mqtt</path>
+            <name>my-websocket</name>
+        </websocket-listener>
+    </listeners>
+
+    <!-- Security Configuration -->
+    <security>
+        <!-- Allow all clients for development -->
+        <allow-all-connections>true</allow-all-connections>
+        
+        <!-- Basic Authentication -->
+        <authentication>
+            <basic>
+                <enabled>false</enabled>
+            </basic>
+        </authentication>
+        
+        <!-- Authorization -->
+        <authorization>
+            <enabled>false</enabled>
+        </authorization>
+    </security>
+
+    <!-- Control Center Configuration -->
+    <control-center>
+        <enabled>true</enabled>
+        <listeners>
+            <http-listener>
+                <port>8080</port>
+                <bind-address>0.0.0.0</bind-address>
+            </http-listener>
+        </listeners>
+    </control-center>
+
+    <!-- Persistence Configuration -->
+    <persistence>
+        <mode>file</mode>
+        <persistence-interval>60000</persistence-interval>
+    </persistence>
+
+    <!-- MQTT Configuration -->
+    <mqtt>
+        <max-message-size>268435456</max-message-size>
+        <max-queued-messages>1000</max-queued-messages>
+        <session-expiry>86400</session-expiry>
+    </mqtt>
+
+    <!-- Extensions -->
+    <extensions>
+        <extension>
+            <name>hivemq-mqtt-client-charts</name>
+            <enabled>true</enabled>
+            <priority>1000</priority>
+        </extension>
+    </extensions>
+
+</hivemq>

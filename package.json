@@ -1,0 +1,43 @@
+{
+  "name": "iot-campus-simulation",
+  "version": "2.0.0",
+  "description": "Distributed Intelligent Campus IoT Environment - Phase 2",
+  "main": "main.py",
+  "scripts": {
+    "start": "python main.py",
+    "docker-up": "docker-compose up -d",
+    "docker-down": "docker-compose down",
+    "docker-logs": "docker-compose logs -f",
+    "install-deps": "pip install -r requirements.txt",
+    "test": "python -m pytest tests/",
+    "lint": "pylint *.py",
+    "format": "black *.py"
+  },
+  "keywords": [
+    "iot",
+    "mqtt",
+    "coap",
+    "simulation",
+    "edge-computing",
+    "thingsboard",
+    "hivemq",
+    "nodered"
+  ],
+  "author": "IoT Development Team",
+  "license": "MIT",
+  "dependencies": {
+    "python": ">=3.8"
+  },
+  "devDependencies": {
+    "pytest": "^7.0.0",
+    "pylint": "^2.17.0",
+    "black": "^23.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-team/iot-campus-simulation.git"
+  },
+  "engines": {
+    "python": ">=3.8"
+  }
+}
